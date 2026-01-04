@@ -56,12 +56,12 @@ docker compose down
 ```
 
 ## Render commands
-render login
-render services
+ - render login
+ - render services
 
 ## psql commands
-\l - list databases
-\c render_db_g221
-SELECT current_database();
-\dt - list table
-select * from todos;
+ - \l - list databases
+ - \c render_db_g221
+ - SELECT current_database();
+ - \dt - list table
+ - select * from todos;
