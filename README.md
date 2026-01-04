@@ -60,8 +60,9 @@ docker compose down
  - render services
 
 ## psql commands
- - \l - list databases
+ - \l -- list databases
  - \c render_db_g221
  - SELECT current_database();
- - \dt - list table
+ - Run init.sql query
+ - \dt -- list table
  - select * from todos;
