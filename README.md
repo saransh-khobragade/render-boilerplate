@@ -4,6 +4,20 @@ Full-stack todo application with React frontend, Express backend, and PostgreSQL
 
 ## Quick Start
 
+## Environment Variables
+
+### Backend
+Create `Backend/.env`:
+```
+PORT=8080
+DATABASE_URL="postgresql://postgres:postgres@localhost:5432/render_db?schema=public"
+```
+
+### Frontend
+Create `Frontend/.env`:
+```
+VITE_API_URL=http://localhost:8080/api
+```
 ### 1. Start Database
 
 ```bash
@@ -32,30 +46,6 @@ bun dev
 
 Frontend runs on: `http://localhost:5173`
 
-## Project Structure
-
-```
-Render/
-├── Backend/          # Express + TypeScript + Prisma
-├── Frontend/         # React + Vite + Tailwind CSS
-└── docker-compose.yml # PostgreSQL database
-```
-
-## Environment Variables
-
-### Backend
-Create `Backend/.env`:
-```
-PORT=8080
-DATABASE_URL="postgresql://postgres:postgres@localhost:5432/render_db?schema=public"
-```
-
-### Frontend
-Create `Frontend/.env`:
-```
-VITE_API_URL=http://localhost:3000/api
-```
-
 ## Stop Services
 
 ```bash
@@ -65,3 +55,13 @@ docker compose down
 # Stop backend/frontend: Ctrl+C in their respective terminals
 ```
 
+## Render commands
+render login
+render services
+
+## psql commands
+\l - list databases
+\c render_db_g221
+SELECT current_database();
+\dt - list table
+select * from todos;
