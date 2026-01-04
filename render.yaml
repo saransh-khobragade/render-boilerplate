@@ -33,7 +33,7 @@ services:
   runtime: static
   repo: https://github.com/saransh-khobragade/render-boilerplate
   envVars:
-  - key: VITE_API_URL
+  - key: VITE_API_URL/api
     sync: false
   buildCommand: bun run build
   staticPublishPath: dist

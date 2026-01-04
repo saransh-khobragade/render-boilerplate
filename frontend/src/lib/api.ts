@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api"
+const API_BASE_URL = import.meta.env.VITE_API_URL
 
 export interface Todo {
   id: string
@@ -11,7 +11,7 @@ export interface Todo {
 export const todoApi = {
   // Get all todos
   getAll: async (): Promise<Todo[]> => {
-    const response = await fetch(`${API_BASE_URL}/todos`)
+    const response = await fetch(`${API_BASE_URL}/api/todos`)
     if (!response.ok) {
       throw new Error("Failed to fetch todos")
     }
@@ -20,7 +20,7 @@ export const todoApi = {
 
   // Create a new todo
   create: async (text: string): Promise<Todo> => {
-    const response = await fetch(`${API_BASE_URL}/todos`, {
+    const response = await fetch(`${API_BASE_URL}/api/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export const todoApi = {
 
   // Update a todo
   update: async (id: string, updates: { completed?: boolean; text?: string }): Promise<Todo> => {
-    const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/todos/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export const todoApi = {
 
   // Delete a todo
   delete: async (id: string): Promise<void> => {
-    const response = await fetch(`${API_BASE_URL}/todos/${id}`, {
+    const response = await fetch(`${API_BASE_URL}/api/todos/${id}`, {
       method: "DELETE",
     })
     if (!response.ok) {
